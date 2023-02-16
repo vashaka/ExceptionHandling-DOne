@@ -76,7 +76,9 @@ namespace ExceptionHandling
 
             if (throwException)
             {
-                throw new ArgumentException("exception is thrown.");
+#pragma warning disable CA2201 // Do not raise reserved exception types
+                throw new Exception("exception is thrown.");
+#pragma warning restore CA2201 // Do not raise reserved exception types
             }
         }
     }
